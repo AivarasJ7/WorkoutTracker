@@ -1,4 +1,4 @@
-﻿namespace Timer
+﻿namespace Project1
 {
     public class TimerMethod
     {
