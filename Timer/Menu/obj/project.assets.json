@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "Timer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Timer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Timer.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Timer/1.0.0": {
+      "type": "project",
+      "path": "../Timer/Timer.csproj",
+      "msbuildProject": "../Timer/Timer.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "Timer >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\OCPC\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\OCPC\\Desktop\\C#\\Project1\\Timer\\Timer\\Timer.csproj": {
+              "projectPath": "C:\\Users\\OCPC\\Desktop\\C#\\Project1\\Timer\\Timer\\Timer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
