@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "Menu/1.0.0": {
-        "dependencies": {
-          "Timer": "1.0.0"
-        },
-        "runtime": {
-          "Menu.dll": {}
-        }
-      },
       "Timer/1.0.0": {
         "runtime": {
           "Timer.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "Menu/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Timer/1.0.0": {
       "type": "project",
       "serviceable": false,

@@ -13,3 +13,9 @@ C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\obj\Debug\net7.0\refint\Menu.dll
 C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\obj\Debug\net7.0\Menu.pdb
 C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\obj\Debug\net7.0\Menu.genruntimeconfig.cache
 C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\obj\Debug\net7.0\ref\Menu.dll
+C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\bin\Debug\net7.0\Timer.deps.json
+C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\bin\Debug\net7.0\Timer.runtimeconfig.json
+C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\bin\Debug\net7.0\Timer.exe
+C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\bin\Debug\net7.0\Timer.dll
+C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\bin\Debug\net7.0\Timer.pdb
+C:\Users\OCPC\Desktop\C#\Project1\Timer\Menu\obj\Debug\net7.0\Menu.csproj.CopyComplete

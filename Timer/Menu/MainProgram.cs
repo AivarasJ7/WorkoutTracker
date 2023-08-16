@@ -1,6 +1,6 @@
-﻿namespace Menu
+﻿namespace Project1
 {
-    internal class Program
+    internal class MainProgram
     {
         public static void Main(string[] args)
         {
@@ -10,9 +10,10 @@
             {
                 Console.WriteLine("Menu:");
                 Console.WriteLine("1. 5-Minute Countdown");
-                Console.WriteLine("2. Option 2");
-                Console.WriteLine("3. Option 3");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("2. New File");
+                Console.WriteLine("3. Load File");
+                Console.WriteLine("4. Edit File");
+                Console.WriteLine("5. Exit");
                 Console.Write("Select an option: ");
 
                 string input = Console.ReadLine();
@@ -20,15 +21,18 @@
                 switch (input)
                 {
                     case "1":
-                        Timer.Countdown(5); // neveikia need fix
+                        Timer.Countdown(5);
                         break;
                     case "2":
-                        Console.WriteLine("You selected Option 2.");
+                        MenuMethods.NewFile();
                         break;
                     case "3":
-                        Console.WriteLine("You selected Option 3.");
+                        MenuMethods.LoadFile();
                         break;
                     case "4":
+                        MenuMethods.EditFile();
+                        break;
+                    case "5":
                         exit = true;
                         break;
                     default:
