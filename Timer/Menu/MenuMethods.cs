@@ -2,62 +2,58 @@
 {
     public class MenuMethods
     {
-        public static void NewFile()
+        public static void WorkoutMenu()
         {
-            Console.WriteLine("Enter text and press Ctrl+Z followed by Enter to save:");
+            bool exit = false;
 
-            string content = Console.ReadLine();
+            while (!exit)
+            {
+                Console.WriteLine("Workout Tracker Menu:");
+                Console.WriteLine("1. Legs and Shoulders Day");
+                Console.WriteLine("2. Pull Day");
+                Console.WriteLine("3. Push Day");
+                Console.WriteLine("4. Back to Main Menu");
+                Console.Write("Select a workout day or option: ");
 
-            Console.WriteLine("Enter a filename:");
-            string fileName = Console.ReadLine();
+                string input = Console.ReadLine();
 
-            File.WriteAllText(fileName, content);
+                switch (input)
+                {
+                    case "1":
+                        EnterWorkoutData("LegsShoulders.txt");
+                        break;
+                    case "2":
+                        EnterWorkoutData("PullDay.txt");
+                        break;
+                    case "3":
+                        EnterWorkoutData("PushDay.txt");
+                        break;
+                    case "4":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. Please select again.");
+                        break;
+                }
 
-            Console.WriteLine("File saved successfully!");
+                Console.WriteLine();
+            }
         }
 
-        public static void LoadFile()
+        public static void EnterWorkoutData(string fileName)
         {
-            Console.WriteLine("Enter the filename to load:");
+            Console.WriteLine($"Enter exercise name:");
+            string exercise = Console.ReadLine();
 
-            string fileName = Console.ReadLine();
+            Console.WriteLine($"Enter weight, reps, and sets (e.g., 39.4(12) 39.4(10.5) 39.4(9.5)):");
+            string data = Console.ReadLine();
 
-            if (File.Exists(fileName))
+            using (StreamWriter writer = File.AppendText(fileName))
             {
-                string content = File.ReadAllText(fileName);
-                Console.WriteLine("File content:");
-                Console.WriteLine(content);
+                writer.WriteLine($"{exercise}|{data}");
             }
-            else
-            {
-                Console.WriteLine("File not found.");
-            }
-        }
 
-        public static void EditFile()
-        {
-            Console.WriteLine("Enter the filename to edit:");
-
-            string fileName = Console.ReadLine();
-
-            if (File.Exists(fileName))
-            {
-                string content = File.ReadAllText(fileName);
-                Console.WriteLine("File content:");
-                Console.WriteLine(content);
-
-                Console.WriteLine("Enter new text and press Ctrl+Z followed by Enter to save:");
-
-                string newContent = Console.ReadLine();
-
-                File.WriteAllText(fileName, newContent);
-
-                Console.WriteLine("File edited and saved successfully!");
-            }
-            else
-            {
-                Console.WriteLine("File not found.");
-            }
+            Console.WriteLine("Workout data added successfully!");
         }
     }
 }

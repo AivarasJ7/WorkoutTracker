@@ -10,10 +10,8 @@
             {
                 Console.WriteLine("Menu:");
                 Console.WriteLine("1. 5-Minute Countdown");
-                Console.WriteLine("2. New File");
-                Console.WriteLine("3. Load File");
-                Console.WriteLine("4. Edit File");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("2. Workout Tracker");
+                Console.WriteLine("3. Exit");
                 Console.Write("Select an option: ");
 
                 string input = Console.ReadLine();
@@ -24,15 +22,9 @@
                         Timer.Countdown(5);
                         break;
                     case "2":
-                        MenuMethods.NewFile();
+                        MenuMethods.WorkoutMenu();
                         break;
                     case "3":
-                        MenuMethods.LoadFile();
-                        break;
-                    case "4":
-                        MenuMethods.EditFile();
-                        break;
-                    case "5":
                         exit = true;
                         break;
                     default:
