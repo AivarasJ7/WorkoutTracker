@@ -55,5 +55,47 @@
 
             Console.WriteLine("Workout data added successfully!");
         }
+
+        public static void LoadWorkoutDay()
+        {
+            Console.WriteLine("Choose a workout day to load:");
+            Console.WriteLine("1. Legs and Shoulders Day");
+            Console.WriteLine("2. Pull Day");
+            Console.WriteLine("3. Push Day");
+            Console.Write("Select an option: ");
+
+            string input = Console.ReadLine();
+            string fileName = "";
+
+            switch (input)
+            {
+                case "1":
+                    fileName = "LegsShoulders.txt";
+                    break;
+                case "2":
+                    fileName = "PullDay.txt";
+                    break;
+                case "3":
+                    fileName = "PushDay.txt";
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Please select a valid workout day.");
+                    return;
+            }
+
+            if (File.Exists(fileName))
+            {
+                Console.WriteLine($"Workout Data for {fileName}:");
+                string[] lines = File.ReadAllLines(fileName);
+                foreach (string line in lines)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Workout day file not found.");
+            }
+        }
     }
 }
