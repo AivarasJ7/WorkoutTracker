@@ -1,4 +1,6 @@
-﻿namespace Project1
+﻿using System.Text.RegularExpressions;
+
+namespace Project1
 {
     public class MenuMethods
     {
@@ -48,6 +50,18 @@
             Console.WriteLine($"Enter weight, reps, and sets (e.g., 39.4(12) 39.4(10.5) 39.4(9.5)):");
             string data = Console.ReadLine();
 
+            if (string.IsNullOrWhiteSpace(exercise))
+            {
+                Console.WriteLine("Exercise name cannot be empty.");
+                return;
+            }
+
+            if (!Regex.IsMatch(data, @"^(\d+(\.\d+)?)\(\d+\)(\s+\d+(\.\d+)?)?\s*"))
+            {
+                Console.WriteLine("Invalid data format. Please use the correct format.");
+                return;
+            }
+
             using (StreamWriter writer = File.AppendText(fileName))
             {
                 writer.WriteLine($"{exercise}|{data}");
@@ -61,32 +75,45 @@
             Console.WriteLine($"Clearing workout data for {fileName}. Are you sure? (Y/N)");
             string confirm = Console.ReadLine();
 
-            if (confirm.Equals("Y", StringComparison.OrdinalIgnoreCase))
+            if (!confirm.Equals("Y", StringComparison.OrdinalIgnoreCase))
             {
-                if (File.Exists(fileName))
-                {
-                    File.Delete(fileName);
-                    Console.WriteLine($"Workout data for {fileName} has been cleared.");
-                }
-                else
-                {
-                    Console.WriteLine($"Workout day file {fileName} not found.");
-                }
+                Console.WriteLine("Operation canceled.");
+                return;
+            }
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+                Console.WriteLine($"Workout data for {fileName} has been cleared.");
             }
             else
             {
-                Console.WriteLine("Operation canceled.");
+                Console.WriteLine($"Workout day file {fileName} not found.");
             }
         }
 
         public static void LoadWorkoutDay(string fileName)
         {
             Console.WriteLine($"Workout Data for {fileName}:");
+
             if (File.Exists(fileName))
             {
                 string[] lines = File.ReadAllLines(fileName);
+                if (lines.Length == 0)
+                {
+                    Console.WriteLine("No workout data available.");
+                    return;
+                }
+
                 foreach (string line in lines)
                 {
+                    string[] parts = line.Split('|');
+                    if (parts.Length != 2)
+                    {
+                        Console.WriteLine("Invalid data format in workout file.");
+                        return;
+                    }
+
                     Console.WriteLine(line);
                 }
             }

@@ -10,7 +10,7 @@
             {
                 Console.WriteLine("Menu:");
                 Console.WriteLine("1. 5-Minute Countdown");
-                Console.WriteLine("2. View Tracked info");
+                Console.WriteLine("2. Load Tracked info");
                 Console.WriteLine("3. Add new Exercise");
                 Console.WriteLine("4. Clear chosen day");
                 Console.WriteLine("5. Exit");
