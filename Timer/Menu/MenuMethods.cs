@@ -70,57 +70,53 @@ namespace Project1
             Console.WriteLine("Workout data added successfully!");
         }
 
-        public static void ClearWorkoutDay(string fileName)
-        {
-            Console.WriteLine($"Clearing workout data for {fileName}. Are you sure? (Y/N)");
-            string confirm = Console.ReadLine();
-
-            if (!confirm.Equals("Y", StringComparison.OrdinalIgnoreCase))
-            {
-                Console.WriteLine("Operation canceled.");
-                return;
-            }
-
-            if (File.Exists(fileName))
-            {
-                File.Delete(fileName);
-                Console.WriteLine($"Workout data for {fileName} has been cleared.");
-            }
-            else
-            {
-                Console.WriteLine($"Workout day file {fileName} not found.");
-            }
-        }
-
         public static void LoadWorkoutDay(string fileName)
         {
-            Console.WriteLine($"Workout Data for {fileName}:");
-
             if (File.Exists(fileName))
             {
-                string[] lines = File.ReadAllLines(fileName);
-                if (lines.Length == 0)
-                {
-                    Console.WriteLine("No workout data available.");
-                    return;
-                }
-
-                foreach (string line in lines)
-                {
-                    string[] parts = line.Split('|');
-                    if (parts.Length != 2)
-                    {
-                        Console.WriteLine("Invalid data format in workout file.");
-                        return;
-                    }
-
-                    Console.WriteLine(line);
-                }
+                DisplayWorkoutData(fileName);
             }
             else
             {
                 Console.WriteLine("Workout day file not found.");
             }
+        }
+
+        public static void ClearWorkoutDay(string fileName)
+        {
+            Console.WriteLine($"Clearing workout data for {fileName}. Are you sure? (Y/N)");
+            string confirm = Console.ReadLine();
+
+            if (confirm.Equals("Y", StringComparison.OrdinalIgnoreCase))
+            {
+                if (File.Exists(fileName))
+                {
+                    ClearDataFile(fileName);
+                }
+                else
+                {
+                    Console.WriteLine($"Workout day file {fileName} not found.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Operation canceled.");
+            }
+        }
+
+        private static void DisplayWorkoutData(string fileName)
+        {
+            string[] lines = File.ReadAllLines(fileName);
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
+        private static void ClearDataFile(string fileName)
+        {
+            File.Delete(fileName);
+            Console.WriteLine($"Workout data for {fileName} has been cleared.");
         }
     }
 }
