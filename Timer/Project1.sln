@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timer", "Timer\Timer.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu", "Menu\Menu.csproj", "{69437392-B290-40E1-BE9E-C5D5141DEBD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.Tests", "Menu.Tests\Menu.Tests.csproj", "{7BA4ABEB-1FBD-44F8-ACC1-3AF288CCB0C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{69437392-B290-40E1-BE9E-C5D5141DEBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69437392-B290-40E1-BE9E-C5D5141DEBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69437392-B290-40E1-BE9E-C5D5141DEBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA4ABEB-1FBD-44F8-ACC1-3AF288CCB0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA4ABEB-1FBD-44F8-ACC1-3AF288CCB0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA4ABEB-1FBD-44F8-ACC1-3AF288CCB0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA4ABEB-1FBD-44F8-ACC1-3AF288CCB0C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

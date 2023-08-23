@@ -16,4 +16,9 @@
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Menu\Menu.csproj" />
+    <ProjectReference Include="..\Timer\Timer.csproj" />
+  </ItemGroup>
+
 </Project>
