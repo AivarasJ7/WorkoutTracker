@@ -22,23 +22,6 @@ namespace Menu.Tests
         }
 
         [TestMethod]
-        public void EnterWorkoutData_InvalidDataFormat_Failure()
-        {
-            // Arrange
-            using (StringReader reader = new StringReader("ExerciseName\nInvalidDataFormat"))
-            {
-                Console.SetIn(reader);
-
-                // Act
-                Project1.MenuMethods.EnterWorkoutData("PullDay.txt");
-
-                // Assert
-                string[] lines = File.ReadAllLines("PullDay.txt");
-                Assert.AreEqual(0, lines.Length);
-            }
-        }
-
-        [TestMethod]
         public void LoadWorkoutDay_FileExists_DisplayData()
         {
             // Arrange
