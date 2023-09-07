@@ -66,7 +66,6 @@ namespace Project1
             {
                 writer.WriteLine($"{exercise}|{data}");
             }
-
             Console.WriteLine("Workout data added successfully!");
         }
 

@@ -89,7 +89,6 @@
                         Console.WriteLine("Invalid option. Please select again.");
                         break;
                 }
-
                 Console.WriteLine();
             }
         }
